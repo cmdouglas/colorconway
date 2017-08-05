@@ -1,0 +1,19 @@
+{
+  "name": "colorconway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmdouglas/colorconway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmdouglas/colorconway/issues"
+  },
+  "homepage": "https://github.com/cmdouglas/colorconway#readme"
+}
