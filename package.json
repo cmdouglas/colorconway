@@ -15,5 +15,20 @@
   "bugs": {
     "url": "https://github.com/cmdouglas/colorconway/issues"
   },
-  "homepage": "https://github.com/cmdouglas/colorconway#readme"
+  "homepage": "https://github.com/cmdouglas/colorconway#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-konva": "^1.1.4",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-jest": "^20.0.3",
+    "jest": "^20.0.4",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
 }
