@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
-import {SELECT_COLOR, STEP, RUN, PAUSE, SET_CELL} from '../actions';
-import {BOARD_WIDTH, BOARD_HEIGHT} from "../settings";
-import ColorConwayBoard from '../gamelogic';
+import {SELECT_COLOR, STEP, RUN, PAUSE, SET_CELL} from './actions';
+import {BOARD_WIDTH, BOARD_HEIGHT} from "./settings";
+import ColorConwayBoard from './gamelogic';
 
 
 
-const isRunning = (isRunning = false, action) => {
+export const isRunning = (isRunning = false, action) => {
     switch (action.type) {
         case RUN: {
             return true;
@@ -19,7 +19,7 @@ const isRunning = (isRunning = false, action) => {
     }
 };
 
-const selectedColor = (selectedColor = null, action) => {
+export const selectedColor = (selectedColor = null, action) => {
     switch (action.type) {
         case SELECT_COLOR: {
             return action.color;
@@ -30,7 +30,7 @@ const selectedColor = (selectedColor = null, action) => {
     }
 };
 
-const board = (board = null, action) => {
+export const board = (board = null, action) => {
     if (!board) {
         board = new ColorConwayBoard(BOARD_WIDTH, BOARD_HEIGHT);
     }

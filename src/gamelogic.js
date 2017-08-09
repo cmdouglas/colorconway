@@ -2,7 +2,7 @@ const randomChoice = (a) => {
     return a[Math.floor(Math.random() * a.length)];
 };
 
-class ColorConwayBoard {
+export default class ColorConwayBoard {
     constructor(width, height) {
         this.width = width;
         this.height = height;

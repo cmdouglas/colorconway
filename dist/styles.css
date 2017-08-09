@@ -1,0 +1,9 @@
+td.conway-cell {
+    width: 4px;
+    height: 4px;
+    border: 1px solid gray;;
+}
+
+td.conway-cell:hover {
+    border: 1px solid cyan;
+}

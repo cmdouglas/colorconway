@@ -1,9 +1,9 @@
 import React from "react"
 
-class PlayControls extends React.Component {
+export default class PlayControls extends React.Component {
     render() {
         return (
-            <div class="play-controls">Play controls</div>
+            <div className="play-controls">Play controls</div>
         )
     }
 }

@@ -1,11 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ColorConway from './components/ColorConway';
+import App from './components/App';
+import ColorConwayBoard from './gamelogic';
+import {Provider} from 'react-redux';
+import rootReducer from './reducers';
+import {createStore} from 'redux';
+
 
 const colorConway = (rootElement) => {
+    const board = new ColorConwayBoard(16, 16);
+
+    const store = createStore(rootReducer);
+
     ReactDOM.render(
-        <ColorConway/>,
+        <Provider store={store} >
+            <App />
+        </Provider>,
         rootElement
     );
 };

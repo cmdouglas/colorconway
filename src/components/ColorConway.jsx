@@ -1,13 +1,13 @@
 import React from 'react';
-import ColorSelector from "./ColorConway";
+import ColorSelector from "./ColorSelector";
 import PlayControls from "./PlayControls";
 import Board from "./Board";
 
-class ColorConway extends React.Component {
+export default class ColorConway extends React.Component {
     render() {
         return(
-            <div class="color-conway">
-                <div class="controls">
+            <div className="color-conway">
+                <div className="controls">
                     <ColorSelector selectedColor={this.props.selectedColor} />
                     <PlayControls paused={this.props.paused} />
                 </div>
@@ -16,5 +16,3 @@ class ColorConway extends React.Component {
         );
     }
 }
-
-export default ColorConway;
