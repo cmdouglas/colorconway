@@ -4,9 +4,6 @@ export default class Cell extends React.Component
 {
     render() {
         let className = "conway-cell";
-        if (this.props.color) {
-            className = className + ' ' + this.props.color;
-        }
-        return <td className={className} />
+        return <td onClick={this.props.setCell} className={className} style={{backgroundColor: this.props.color || 'white'}} />
     }
 }

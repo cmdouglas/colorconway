@@ -25,16 +25,24 @@ export default class ColorConwayBoard {
     };
 
     getCell(point) {
-        return this.liveCells.get(point)
+        return this.liveCells.get(point.toString())
     };
+
+    pointFromString(strpoint) {
+        return strpoint.split(',').map((coord) => parseInt(coord));
+    }
+
+    getLiveCells() {
+        return [...this.liveCells.keys()].map(this.pointFromString);
+    }
 
     setCell(point, color) {
         if (this.boundsCheck(point)) {
             if (color) {
-                this.liveCells.set(point, color);
+                this.liveCells.set(point.toString(), color);
             }
             else {
-                this.liveCells.delete(point)
+                this.liveCells.delete(point.toString())
             }
         }
     };
@@ -65,23 +73,21 @@ export default class ColorConwayBoard {
         const newBoard = new ColorConwayBoard(this.width, this.height);
         const candidates = new Set();
 
-        for (const point of this.liveCells.keys()) {
-            candidates.add(point);
+        for (const point of this.getLiveCells()) {
+            candidates.add(point.toString());
             for (const neighbor of ColorConwayBoard.getNeighbors(point)) {
-                candidates.add(neighbor);
+                candidates.add(neighbor.toString());
             }
         }
 
-        for (const candidate of candidates) {
+        for (const candidate of [...candidates].map(this.pointFromString)) {
             const liveNeighbors = this.getLiveNeighbors(candidate);
             const current = this.getCell(candidate);
             if (current && (liveNeighbors.length === 2 || liveNeighbors.length === 3)) {
-                const neighborsCopy = Array.from(liveNeighbors);
-                neighborsCopy.push(current);
-                newBoard.setCell(randomChoice(neighborsCopy));
+                newBoard.setCell(candidate, randomChoice([...liveNeighbors]));
             }
             else if (liveNeighbors.length === 3) {
-                newBoard.setCell(randomChoice(liveNeighbors));
+                newBoard.setCell(candidate, randomChoice(liveNeighbors));
             }
         }
 

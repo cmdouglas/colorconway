@@ -13,20 +13,6 @@ export const step = () => {
     }
 };
 
-export const RUN = 'RUN';
-export const run = () => {
-    return {
-        type: RUN,
-    }
-};
-
-export const PAUSE = 'PAUSE';
-export const pause = () => {
-    return {
-        type: PAUSE,
-    }
-};
-
 export const SET_CELL = 'SET_CELL';
 export const setCell = (point, color) => {
     return {
@@ -36,3 +22,9 @@ export const setCell = (point, color) => {
     }
 };
 
+export const CLEAR = 'CLEAR';
+export const clear = () => {
+    return {
+        type: CLEAR
+    }
+};

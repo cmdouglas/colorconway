@@ -1,9 +1,29 @@
 td.conway-cell {
     width: 4px;
     height: 4px;
-    border: 1px solid gray;;
+    border: 1px solid lightgray;;
+    padding: 0;
 }
 
 td.conway-cell:hover {
     border: 1px solid cyan;
+}
+
+ul.color-selector-container {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.color-selector {
+    float: left;
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid lightgray;
+}
+
+li.selected {
+    border: 1px solid blue !important;
 }

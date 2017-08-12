@@ -1,5 +1,5 @@
 import React from "react";
-import Cell from "./Cell";
+import ActiveCell from "./ActiveCell";
 
 export default class Board extends React.Component
 {
@@ -10,7 +10,7 @@ export default class Board extends React.Component
                 {[...new Array(this.props.board.height)].map((row, y) =>
                     <tr key={y} className = "conway-board-row">
                         {[...new Array(this.props.board.width)].map((cell, x) =>
-                            <Cell key={[x, y]} x={x} y={y} color={this.props.board.liveCells.get([x, y])} />
+                            <ActiveCell key={[x, y]} x={x} y={y} color={this.props.board.getCell([x, y])} />
                         )}
                     </tr>
                 )}
